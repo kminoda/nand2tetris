@@ -1,0 +1,17 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/09/HelloWorld/Main.jack
+
+/** Hello World 
+program. */
+
+class Main {
+   function void main() {
+      var List/* Hello World program. */v;
+      let v = List.new(512,null);
+      let v = List.new(2,List.new(322,v));
+      let a = "hoge";
+      return;
+   }
+}

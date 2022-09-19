@@ -1,0 +1,9 @@
+./VMtranslator ../StackArithmetic/SimpleAdd/SimpleAdd.vm
+./VMtranslator ../StackArithmetic/StackTest/StackTest.vm
+./VMtranslator ../MemoryAccess/BasicTest/BasicTest.vm
+./VMtranslator ../MemoryAccess/PointerTest/PointerTest.vm
+./VMtranslator ../MemoryAccess/StaticTest/StaticTest.vm
+./VMtranslator ../ProgramFlow/BasicLoop/BasicLoop.vm
+./VMtranslator ../ProgramFlow/FibonacciSeries/FibonacciSeries.vm
+./VMtranslator ../FunctionCalls/SimpleFunction/SimpleFunction.vm
+./VMtranslator ../FunctionCalls/NestedCall/Sys.vm
