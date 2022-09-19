@@ -4,22 +4,22 @@ mod vm_parsers;
 use vm_parsers::test;
 
 
-struct VMParser {
+struct VMParser<'a> {
   // ifs: std::ifstream,
-  curr_command: String,
-  curr_command_words: Vec<String>,
-  commands: VecDeque<String>,
+  curr_command: &'a str,
+  curr_command_words: Vec<&'a str>,
+  commands: VecDeque<&'a str>,
 }
 
-impl VMParser {
+impl<'a> VMParser<'a> {
   fn new(infile: &str) -> VMParser {
     println!("Load {}", infile);
 
     let mut commands = VecDeque::new();
-    let hoge: String = "hoge".to_string();
+    let hoge = "hoge";
     commands.push_back(hoge);
     return VMParser{
-      curr_command: String::new(),
+      curr_command: "",
       curr_command_words: Vec::new(),
       commands: commands,
     };
@@ -37,7 +37,7 @@ impl VMParser {
 
   fn split_command(&mut self) {
     self.curr_command_words = Vec::new();
-    let curr_command_temp = &(self.curr_command);
+    let curr_command_temp: &str = &(self.curr_command);
     // loop {
     //   if 
     // }
@@ -49,7 +49,8 @@ fn main() {
   println!("Hello, world!");
   test();
 
-  let input: &str = "hoge";
+  let mut input: &str = "hoge";
+  input = "hogehoge";
 
   let mut vm_parsers = VMParser::new(input);
   let _ = vm_parsers.has_more_commands();
